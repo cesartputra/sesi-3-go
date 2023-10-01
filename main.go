@@ -15,9 +15,9 @@ type Person struct {
 }
 
 var classmate = []Person{
-	{1, "Fitri", "Jakarta", "Developer", "Suka dengan bahasa Go"},
-	{2, "Cesar", "Jakarta", "Software Engineer", "Menambah Skill"},
-	{3, "Budi", "Bandung", "Accounting", "Switch Career"},
+	{0, "Fitri", "Jakarta", "Developer", "Suka dengan bahasa Go"},
+	{1, "Cesar", "Jakarta", "Software Engineer", "Menambah Skill"},
+	{2, "Budi", "Bandung", "Accounting", "Switch Career"},
 }
 
 func main() {
