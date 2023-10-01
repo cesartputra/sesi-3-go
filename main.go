@@ -32,20 +32,20 @@ func main() {
 	var indexOfFoundClassmate int
 
 	if num, err := strconv.Atoi(searchParam); err == nil {
-		indexOfFoundClassmate := findClassmateById(num)
-
+		indexOfFoundClassmate = findClassmateById(num)
 		if indexOfFoundClassmate == -1 {
 			fmt.Printf("Data Teman dengan Id '%d' tidak ditemukan.\n", num)
 		}
 	} else {
-		indexOfFoundClassmate := findClassmateByName(searchParam)
-
+		indexOfFoundClassmate = findClassmateByName(searchParam)
 		if indexOfFoundClassmate == -1 {
 			fmt.Printf("Teman dengan nama '%s' tidak ditemukan.\n", searchParam)
 		}
 	}
 
-	showClassmateData(classmate[indexOfFoundClassmate])
+	if indexOfFoundClassmate != -1 {
+		showClassmateData(classmate[indexOfFoundClassmate])
+	}
 }
 
 func findClassmateByName(name string) int {
@@ -68,6 +68,7 @@ func findClassmateById(id int) int {
 }
 
 func showClassmateData(person Person) {
+	fmt.Println("Id:", person.Id)
 	fmt.Println("Nama:", person.Name)
 	fmt.Println("Alamat:", person.Address)
 	fmt.Println("Pekerjaan:", person.Occupation)
